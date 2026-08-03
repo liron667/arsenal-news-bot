@@ -1,0 +1,34 @@
+# Arsenal news bot. TARGET_CHANNEL_ID env var (or .env) overrides target_channel_id.
+
+target_channel_id: ""      # set via GitHub secret / .env
+lookback_hours: 3
+seen_retention_days: 30
+
+telegram_channels: []      # none for this bot (web sources only)
+
+rss_feeds:
+  - name: ONE
+    url: https://www.one.co.il/rss
+  - name: "וואלה - ליגה אנגלית"
+    url: https://rss.walla.co.il/feed/160
+  - name: "וואלה - כדורגל עולמי"
+    url: https://rss.walla.co.il/feed/316
+
+# Sites without usable RSS: scrape a listing page for article links (title + url).
+html_sources:
+  - name: Sport5
+    url: "https://www.sport5.co.il/world.aspx?FolderID=4453"      # world football
+    link_regex: 'articles\.aspx\?FolderID=\d+&(?:amp;)?docID=\d+'
+
+# WordPress REST API (JS-rendered sites where scraping fails).
+wp_sources:
+  - name: "ספורט1"
+    url: "https://sport1.maariv.co.il/wp-json/wp/v2/posts?per_page=50"
+
+# An item is posted only if it contains a keyword AND no exclusion.
+keywords:
+  - "ארסנל"
+  - "Arsenal"
+  - "התותחנים"
+
+exclusions: []
