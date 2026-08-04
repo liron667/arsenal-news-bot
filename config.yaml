@@ -7,7 +7,7 @@ seen_retention_days: 30
 # AI post generation (needs GEMINI_API_KEY secret). Falls back to title+link if off/failed.
 ai:
   enabled: true
-  model: gemini-2.0-flash
+  model: gemini-flash-latest
   team: "ארסנל"
 
 telegram_channels: []      # none for this bot (web sources only)
