@@ -4,6 +4,12 @@ target_channel_id: ""      # set via GitHub secret / .env
 lookback_hours: 3
 seen_retention_days: 30
 
+# AI post generation (needs GEMINI_API_KEY secret). Falls back to title+link if off/failed.
+ai:
+  enabled: true
+  model: gemini-2.0-flash
+  team: "ארסנל"
+
 telegram_channels: []      # none for this bot (web sources only)
 
 rss_feeds:
