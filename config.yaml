@@ -9,6 +9,7 @@ ai:
   enabled: true
   model: gemini-flash-latest
   team: "ארסנל"
+  hashtags: ["#ארסנל", "#פרמייר_ליג"]
 
 telegram_channels: []      # none for this bot (web sources only)
 
